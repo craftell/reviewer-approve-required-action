@@ -1,1 +1,5 @@
-# reviewer-approve-required-action
+# Reviewer Approve Required GitHub Action
+
+## Example usage
+
+TBD
