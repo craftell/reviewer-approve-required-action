@@ -1,0 +1,13 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "Untitled Node.js project",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"remoteUser": "node",
+	"features": {
+		"ghcr.io/dhoeric/features/act": {},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker": {}
+	},
+	"postCreateCommand": "rm ~/.docker/config.json"
+}

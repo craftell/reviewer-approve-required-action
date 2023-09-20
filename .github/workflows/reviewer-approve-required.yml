@@ -1,0 +1,22 @@
+name: Check reviewers' approval
+run-name: Checks if reviewers are remaining.
+
+on:
+  pull_request:
+    types: [ready_for_review, review_requested, review_request_removed]
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+
+concurrency: 
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  main-check:
+    name: Checks if reviewers are remaining
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,14 @@
+name: Reviewer Approve Required
+author: Craftell <dev@craftell.co.jp>
+description: This Github action will require all reviewers' approval to pass the Github Actions workflow.
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+
+inputs:
+  github_token:
+    description: 'Github token for authentication'
+    required: true
+branding:
+  icon: 'user-check'  
+  color: 'green'
